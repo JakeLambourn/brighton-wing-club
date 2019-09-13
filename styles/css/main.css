@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "Flyboy";
+  src: url(../fonts/FlyBoyBB.ttf) format("truetype"); }
+h1 {
+  font-family: "Flyboy", sans-serif;
+  color: #ffffff;
+  font-size: 110px;
+  margin-top: 10px;
+  font-weight: normal; }
+
+img {
+  width: 40%; }
+
+body {
+  background-color: #E77E21;
+  text-align: center; }
