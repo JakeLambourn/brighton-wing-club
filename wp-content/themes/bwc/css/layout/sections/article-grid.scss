@@ -1,0 +1,17 @@
+img.fit {
+    display: block;
+    width: 100%;
+}
+.article-caption {
+    padding: 20px 0;
+    margin-bottom: 30px;
+    background: $light-grey;
+}
+.article-caption p.overline {
+    font-family: $header-font;
+    font-weight: bold;
+    font-size: 12px;
+}
+.article-caption p.overline strong {
+    display: block;
+}

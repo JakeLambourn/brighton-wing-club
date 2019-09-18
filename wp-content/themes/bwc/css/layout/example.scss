@@ -1,0 +1,88 @@
+/* 
+Variables
+*/
+
+$font-stack: Helvetica, sans-serif;
+$primary-color: #ff0000;
+
+body {
+    font-family: $font-stack;
+    color: $primary-color;
+}
+
+/*
+Nesting
+*/
+
+nav {
+    ul {
+        margin:0;
+        padding:0;
+        list-style:none;
+        
+        li {
+            font-weight:bold;
+            
+            a {
+                display:block;
+            }
+        }
+        
+    }
+}
+    
+    
+/* Mixins */
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin square($size,$color) {
+    width:$size;
+    height:$size;
+    background-color:$color;
+}
+
+.small-blue-square {
+    @include square(100px,#ff0000);
+}
+
+.box { @include border-radius(10px); }
+    
+
+/* Extensins / Inheritance */
+
+.message {
+    border:1px solid #ff0000;
+    padding:10px;
+}
+
+.success {
+    @extend .message;
+    border-color: green; 
+}
+
+.error {
+    @extend .message;
+    border-color: red; 
+}
+
+
+/* Operators */
+
+.container {
+    width:100%;
+}
+
+aside[role="complementary"] {
+    width:300px / 960px * 100%;
+    float:right;
+}
+
+article[role="main"] {
+    float:left;
+    width: 600px / 960px * 100%;
+}

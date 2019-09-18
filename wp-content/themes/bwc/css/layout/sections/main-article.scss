@@ -1,0 +1,80 @@
+h2.main-article-caption {
+    font-family: $header-font;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+}
+h2.main-article-header {
+    font-family: $header-font;
+    font-size: 30px;
+    margin-top: 32px;
+    margin-bottom: 12px;
+    line-height: 36px;
+    @media #{$mediaquery-smalldesktop} {
+        line-height: 24px;
+    }
+}
+.main-article p:not(.tagline) {
+    line-height: 24px;
+    padding-bottom: 32px;
+}
+
+blockquote h3 {
+    font-size: 22px;
+    line-height: 30px;
+    letter-spacing: 0.2px;
+    font-family: $main-font;
+    font-weight: 600;
+    font-style: oblique;
+    margin: 0 0 32px 0;
+    padding: 0 0 0 34px;
+    border-left: 2px solid $main-colour;
+}
+
+p.tagline {
+    position: relative;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 16px;
+    padding: 6px 0 4px 0;
+    margin-bottom: 12px;
+    font-family: $header-font;
+    font-weight: bold;
+}
+p.tagline:after {
+    position: absolute;  
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    content: '';
+    border-bottom: 2px solid $main-colour;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+
+.author-credit {
+    margin-bottom: 4px;
+}
+.author-credit p {
+    padding-top: 8px;
+}
+
+.author-image {
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 18px;
+    overflow: hidden;
+}
+.author-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.main-article ul {
+    margin-left: 20px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 26px;
+}

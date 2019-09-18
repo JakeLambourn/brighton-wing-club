@@ -1,0 +1,38 @@
+ul.social-share-icons {
+    display: none; /* hide on mobile.. */
+    @media only screen and (min-width: $breakpoint-tablet) {
+        display: inline-block;
+    }
+    position: fixed;
+    top: 50%;
+    right: 90px;
+    z-index: 98; /* May need shifting under header.. */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    transform: translateY(-50%);
+}
+ul.social-share-icons li {
+    display: block;
+}
+ul.social-share-icons li a {
+    display: block;
+    position: relative;
+    font-size: 20px;
+    text-align: center;
+    margin: 0 0 10px 0;
+    padding: 4px;
+    border-radius: 50%;
+    background: $light-grey;
+}
+//Share Counters
+ul.social-share-icons li a span {
+    position: absolute;
+    display: inline-block;
+    width: 20px;
+    bottom: 4px;
+    left: 42px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left !important;
+}

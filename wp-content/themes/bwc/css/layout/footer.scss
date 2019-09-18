@@ -1,0 +1,20 @@
+footer {
+  background: $main-colour;
+  z-index:$z-index-content;
+  position: relative;
+}
+
+footer p {
+  text-align: center;
+  color: $colour-white;
+  font-size:1rem;
+  padding:25px 0;
+
+  a {
+    color: $colour-white;
+  }
+
+  @media #{$mediaquery-smalldesktop} {
+    font-size:1.2rem;
+  }
+}

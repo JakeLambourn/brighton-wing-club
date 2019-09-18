@@ -1,0 +1,244 @@
+
+/* Table of Content
+==================================================
+	#Typography
+	#SVG fallback
+	#Opacity
+	#transition
+	*/
+
+
+
+/* #Typography
+================================================== 
+
+	e.g. 
+	p {
+	  @include font-size(14px)
+	}
+
+	*/
+
+	@function calculateRem($size) {
+	  $remSize: $size / 10;
+	  @return $remSize + rem;
+	}
+
+	@mixin font-size($size) {
+	  font-size: $size + px;
+	  font-size: calculateRem($size);
+	}
+
+
+/* #SVG Fallback
+================================================== 
+
+	e.g. 
+	body {
+	  @include background-image('pattern');
+	}
+
+*/
+
+$image-path: '../../images' !default;
+$fallback-extension: 'png' !default;
+$retina-suffix: '@2x';
+
+@mixin background-image($name, $size:false){
+    background-image: url(#{$image-path}/#{$name}.svg);
+    @if($size){
+        background-size: $size;
+    }
+    .no-svg &{
+        background-image: url(#{$image-path}/#{$name}.#{$fallback-extension});
+    }
+}
+
+
+/* #Opacity
+================================================== 
+
+	e.g. 
+	.faded-text {
+	  @include opacity(0.8);
+	}
+
+*/
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+/* #Transition
+================================================== 
+
+	e.g.
+	.box {
+    	@include transition(all, 0.2s, ease-in-out);
+	}
+*/
+
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
+/* #Border - Radius
+================================================== 
+
+	e.g.
+	.box {
+    	@include border-radius(10);
+	}
+*/
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+          	   overflow: hidden;
+}
+
+
+/* #Rotate
+================================================== 
+*/
+@mixin rotate($deg) {
+	-ms-transform: rotate($deg + deg); /* IE 9 */
+    -webkit-transform: rotate($deg + deg); /* Chrome, Safari, Opera */
+    transform: rotate($deg + deg);
+}
+
+/* #Gradient Background
+================================================== 
+
+	e.g.
+	.box {
+	    @include linear-gradient(#000, #BADA55); // Stick in your favourite HEX colours
+	}
+*/
+
+@mixin linear-gradient($fromColor, $toColor) {
+  background-color: $toColor; /* Fallback Color */
+  background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient(top, $fromColor, $toColor); /* FF3.6 */
+  background-image:     -ms-linear-gradient(top, $fromColor, $toColor); /* IE10 */
+  background-image:      -o-linear-gradient(top, $fromColor, $toColor); /* Opera 11.10+ */
+  background-image:         linear-gradient(top, $fromColor, $toColor);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+}
+
+
+/* #ANIMATION
+================================================== 
+
+	e.g.
+	@include keyframes(slide-down) {
+	  0% { opacity: 1; }
+	  90% { opacity: 0; }
+	}
+
+	.element {
+	  width: 100px;
+	  height: 100px;
+	  background: black;
+	  @include animation('slide-down 5s 3');
+	}
+
+*/
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes $animation-name {
+    @content;
+  }
+  @-moz-keyframes $animation-name {
+    @content;
+  }  
+  @-ms-keyframes $animation-name {
+    @content;
+  }
+  @-o-keyframes $animation-name {
+    @content;
+  }  
+  @keyframes $animation-name {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};      
+}
+
+
+
+/* #DROP SHADOW
+================================================== 
+
+  e.g.
+
+  .element {
+    @include box-shadow(0, 1px, 1px, rgba(0, 0, 0, 0.075), inset);
+  }
+
+*/
+
+@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
+
+      -webkit-box-shadow:$top $left $blur $color #{$inset};
+      -moz-box-shadow:$top $left $blur $color #{$inset};
+      box-shadow:$top $left $blur $color #{$inset};
+    }
+
+
+/* #BURGER ICON
+================================================== 
+
+  e.g.
+
+  .burger-icon {
+    @include burger(25px, 3px, 5px, #222);
+  }
+  .circle.is-active .burger-icon {
+      @include burger-to-cross;
+  }
+
+*/
+@mixin burger($width: 30px, $height: 5px, $gutter: 3px, $color: #000, $border-radius: 0, $transition-duration: .3s) {
+    $burger-height: $height !global;
+    $burger-gutter: $gutter !global;
+
+    position: relative;
+    margin-top: $height + $gutter;
+    margin-bottom: $height + $gutter;
+
+    } 
+
+
+/* #BURGER ICON
+================================================== */
+@mixin center {
+    width: 100%;
+    margin-top: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+// So centered object dont ignore padding
+@mixin center-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}

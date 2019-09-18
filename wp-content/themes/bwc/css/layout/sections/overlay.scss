@@ -1,0 +1,101 @@
+/* close button for both overlays */
+
+.close {
+  width:44px;
+  height:44px;
+  position: absolute;
+  right:0;
+  top:0;
+
+  img {
+    width:44px;
+    height:44px;
+    position: absolute;
+    top:$header-height + $gutter;
+    right:0;
+
+    @media #{$mediaquery-smalldesktop} {
+      right: $gutter*2;
+    }
+  }
+}
+
+#demo-overlay {
+  height:  100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: $z-index-overlay;
+  @include colour-overlay('blue-to-white');
+
+
+  @media #{$mediaquery-smalldesktop} {
+    padding-top:0
+  }
+  display: none;
+
+
+  .overlay-inner {
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    position: absolute;
+    overflow: auto;
+
+    .container {
+      padding:150px 0 $standard-padding-mobile;
+
+      @media #{$mediaquery-smalldesktop} {
+        padding:0;
+        height: 100vh;
+      }
+    }
+  }
+
+
+
+
+}
+
+/* for the contact page */
+#overlay-enquiry {
+  //TODO: import some of these features (width/height/etc). Or maybe make mixin?
+  z-index: $z-index-content;
+  background: rgba(41,55,64,0.96);
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  position: absolute;
+  display: none;
+
+  .container {
+
+    padding-top:$standard-padding-desktop;
+
+    @media #{$mediaquery-smalldesktop} {
+      height: 100%;
+      padding:0;
+    }
+  }
+
+  form {
+    margin-top:15px;
+  }
+
+  .close img {
+    right:$gutter_mobile;
+    top:30px;
+
+    @media #{$mediaquery-smalldesktop} {
+      right:100px;
+    }
+
+    @media #{$mediaquery-largedesktop} {
+      right:110px;
+    }
+  }
+}
+

@@ -1,0 +1,7 @@
+section.demo {
+  @include colour-overlay('blue-to-white');
+}
+
+section.demo form {
+  margin-top:40px;
+}

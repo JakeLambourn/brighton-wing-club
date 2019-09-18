@@ -1,0 +1,41 @@
+.bird-squares::after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.bird-square {
+  width:50%;
+  float: left;
+
+  img {
+    display: block;
+  }
+}
+
+.style-item {
+
+  padding:0 0 30px 40px;
+  background:url(../images/bird/IntegrateWithData.svg) no-repeat;
+  background-size: 35px 28px;
+  background-position: 0 5px;
+
+  p {
+    font-size:1.4rem;
+
+    strong {
+      font-size:1.5rem;
+    }
+
+  }
+
+  &.upload {
+    background-image: url(../images/bird/UploadImages.svg);
+  }
+
+  &.animate {
+    background-image: url(../images/bird/AnimateandVideo.svg);
+  }
+  &.bespoke {
+    background-image: url(../images/bird/BespokeYourOwn.svg);
+  }
+}

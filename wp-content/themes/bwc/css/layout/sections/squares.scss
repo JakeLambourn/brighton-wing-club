@@ -1,0 +1,230 @@
+
+/**
+Squares
+ */
+
+section.squares::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+section.squares div.square {
+  width:100%;
+  float:left;
+  overflow: hidden;
+
+
+  position: relative;
+
+
+  &:hover div.square-overlay {
+    transform: scale(1.1);
+  }
+
+
+  @media #{$mediaquery-tablet} {
+    width:50%;
+    height:50vw;
+
+    &.square-half {
+      height:25vw;
+    }
+  }
+
+  .square-overlay {
+    background:url(../images/hive/guide.jpg) no-repeat;
+    background-size: cover;
+    @include bm-transition(transform);
+  }
+
+  &.bg-approve .square-overlay {
+    background-image:url(../images/hive/approve.jpg);
+
+  }
+
+  &.bg-collaborate .square-overlay  {
+    background-image:url(../images/hive/collaborate.jpg);
+  }
+
+  &.bg-share .square-overlay  {
+    background-image:url(../images/hive/share.jpg);
+  }
+
+  div.square-content {
+    position: relative;
+    z-index: $z-index-content;
+    margin:0 auto;
+    max-width:260px;
+    padding:50px 0;
+    text-align: center;
+
+    h1 {
+      font-size:5rem;
+
+      @media #{$mediaquery-tablet} {
+        font-size:7rem;
+      }
+    }
+
+
+
+    @media #{$mediaquery-tablet} {
+      /* create mixin for vertically centered */
+      top: 50%;
+      transform: translateY(-50%);
+      padding:0;
+    }
+
+    p,h1,h2 {
+      color: $main-colour;
+      text-align: center;
+    }
+
+    a {
+      text-align: center;
+      margin-top:15px;
+    }
+
+    p {
+      margin-top:10px;
+    }
+
+    img {
+      height:auto;
+      width:100px;
+      display: block;
+      margin:0 auto 15px;
+
+      @media #{$mediaquery-tablet} {
+        width:auto;
+        height:100px;
+      }
+
+      @media #{$mediaquery-smalldesktop} {
+        width:auto;
+        height:160px;
+      }
+    }
+  }
+
+  &.square-dark {
+    .square-content {
+      p, h1,h2 {
+        color: $colour-white;
+      }
+    }
+
+    .bm-overlay {
+      @include colour-overlay('blue');
+    }
+
+  }
+
+
+
+}
+
+/* The homepage has an exception whereby the h2 needs to break from the 260 max-width */
+section.squares.squares-home div.square {
+  div.square-content {
+    max-width:100%;
+
+    h1,p,a {
+      max-width:420px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+
+  }
+
+  .square-overlay {
+    background:url(../images/home/product-bird.jpg) no-repeat;
+    background-size: cover;
+  }
+
+  &.bg-fox .square-overlay {
+    background:url(../images/home/product-fox.jpg) no-repeat;
+    background-size: cover;
+  }
+
+  &.bg-nectar .square-overlay {
+    background-size: cover;
+  }
+
+  &.bg-hive .square-overlay {
+    background:url(../images/home/product-hive.jpg) no-repeat;
+    background-size: cover;
+  }
+
+  &.bg-freebie .square-overlay {
+    background:url(../images/forest/product-freebie.jpg) no-repeat;
+    background-size: cover;
+  }
+
+  &.bg-toptip .square-overlay {
+    background:url(../images/forest/product-toptip.jpg) no-repeat;
+    background-size: cover;
+  }
+
+
+
+
+
+
+  &:hover {
+    .bm-overlay {
+      background:rgba(100,188,131,0.9);
+    }
+  }
+}
+
+.squares-home-services {
+  p {
+    font-size:2rem;
+    font-family:$header-font;
+    font-weight: bold;
+    margin-bottom:25px;
+  }
+
+  .bm-overlay {
+    @include colour-overlay('white');
+  }
+
+  .square:hover .bm-overlay {
+    display:block;
+  }
+
+
+  .square-content {
+    /*
+    display:none;
+    */
+    max-width:330px;
+  }
+
+/*
+  .square:hover .square-content {
+    display:block;
+    max-width:330px;
+  }
+*/
+
+  div.square.bg-inventor-lab .square-overlay {
+    background:url(../images/home/services-inventorlab.jpg) no-repeat;
+    background-size: cover;
+  }
+
+  div.square.bg-development .square-overlay {
+    background:url(../images/home/bg-home-development.jpg) no-repeat;
+    background-size: cover;
+  }
+
+  div.square.bg-design .square-overlay {
+    background:url(../images/home/bg-design.jpg) no-repeat;
+    background-size: cover;
+  }
+
+
+}

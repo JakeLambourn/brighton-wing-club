@@ -1,0 +1,71 @@
+video#bgvid {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background: $main-colour;
+
+}
+
+div.banner-next {
+  bottom:20px;
+  position: absolute;
+  width:100%;
+  z-index: $z-index-content;
+  text-align: center;
+
+  img {
+    width:65px;
+  }
+}
+
+img#home-topbanner-image {
+  bottom: 0;
+  position: absolute;
+  right: -30%;
+  z-index: $z-index-content;
+  width:70%;
+
+
+
+  @media #{$mediaquery-smalldesktop} {
+    width:inherit;
+    right:0;
+  }
+}
+
+.home-fullscreen-background-top,
+.home-fullscreen-background {
+  width:100%;
+  height:100%;
+  position: fixed;
+  z-index:$z-index-background;
+  background: rgba(32,46,56,0.71);
+  @include bm-transition(opacity);
+
+  &.hide {
+    opacity:0;
+  }
+}
+
+.home-fullscreen-background-top {
+  z-index:$z-index-background-top;
+  background: rgba(46,175,179,0.71);
+
+  background: rgba(43,184,194,0.9);
+  background: -moz-linear-gradient(left, rgba(43,184,194,0.9) 0%, rgba(100,190,93,0.9) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(43,184,194,0.9)), color-stop(100%, rgba(100,190,93,0.9)));
+  background: -webkit-linear-gradient(left, rgba(43,184,194,0.9) 0%, rgba(100,190,93,0.9) 100%);
+  background: -o-linear-gradient(left, rgba(43,184,194,0.9) 0%, rgba(100,190,93,0.9) 100%);
+  background: -ms-linear-gradient(left, rgba(43,184,194,0.9) 0%, rgba(100,190,93,0.9) 100%);
+  background: linear-gradient(to right, rgba(43,184,194,0.9) 0%, rgba(100,190,93,0.9) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2bb8c2', endColorstr='#64be5d', GradientType=1 )
+}

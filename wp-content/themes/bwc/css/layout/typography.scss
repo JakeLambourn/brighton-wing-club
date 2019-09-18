@@ -1,0 +1,154 @@
+html {
+  font-size:10px;
+}
+
+body,*,p {
+  font-family: $main-font;
+  color:       $main-colour;
+}
+
+p {
+  font-size:1.4rem;
+  line-height: 2rem;
+
+  @media #{$mediaquery-smalldesktop} {
+    font-size: 1.5rem;
+  }
+}
+
+div.title-content p {
+
+  @media #{$mediaquery-smalldesktop} {
+    font-size: 1.7rem;
+    line-height:2.5rem;
+  }
+}
+
+p.overline,
+h1,h2,h3,
+h1 span, h2 span, h3 span {
+  font-family: $header-font;
+  color:       $main-colour;
+}
+
+p.overline {
+  font-size:1.6rem;
+  display:inline-block;
+  position:relative;
+  /*
+  font-weight: bold;
+  */
+}
+
+h1 {
+  font-size:6rem;
+  line-height:1;
+
+  &.medium {
+    font-size:6rem;
+    margin-bottom:15px;
+  }
+
+  &.smaller {
+    font-size:4rem;
+    margin-bottom:15px;
+  }
+}
+
+h2 {
+  font-size:2.5rem;
+  margin:15px 0;
+
+  &.overline {
+    margin-top:0;
+  }
+
+  &.xlarge {
+    font-size:6rem;
+    line-height:1;
+  }
+}
+
+h3 {
+  font-size:1.5rem;
+}
+section.banner h2 {
+  font-size:4rem;
+}
+
+@media #{$mediaquery-smalldesktop} {
+  h1 {
+    font-size:9rem;
+
+    &.smaller {
+      font-size: 6rem;
+
+    }
+  }
+  h2 {
+    font-size:3.6rem;
+
+    &.xlarge {
+      font-size:12rem;
+
+    }
+  }
+  
+  section.text-banner h1 {
+    font-size: 7rem;
+    line-height:1;
+  }
+
+  section.banner h2 {
+    font-size:6rem;
+  }
+}
+
+section.banner.text-banner-large-text {
+  h1 {
+
+    font-size: 6rem;
+    line-height: 1;
+
+    @media #{$mediaquery-smalldesktop} {
+      font-size: 11.5rem;
+    }
+
+    span {
+      font-size: 4rem;
+
+      @media #{$mediaquery-smalldesktop} {
+        font-size: 9rem;
+      }
+      display: block;
+    }
+  }
+
+  p {
+    font-size:1.6rem;
+    line-height:2.2rem;
+    margin-top:10px;
+
+    @media #{$mediaquery-smalldesktop} {
+      font-size: 2.4rem;
+      line-height:3rem;
+    }
+  }
+}
+
+  a {
+    color:$main-colour;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color:$highlight-colour;
+  }
+
+  .white-text {
+    p,h1,h2,h3,a {
+      color: $colour-white;
+    }
+  }
+
+

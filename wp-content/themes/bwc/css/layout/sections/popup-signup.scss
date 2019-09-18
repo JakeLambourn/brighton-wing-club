@@ -1,0 +1,33 @@
+section.popup-signup {
+  background: rgba(33,47,57,0.9); /* Opacity adjusted from 0.7 in PSD */
+
+  position: fixed;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+
+  z-index: 99;
+}
+section.popup-signup h2 {
+    font-size: 24px;
+}
+section.popup-signup .btn {
+    background: $highlight-colour;
+}
+
+section.popup-signup form {
+  margin-top:40px;
+}
+
+p.response {
+    font-family: $main-font;
+    font-size: 16px;
+    font-weight: bold;
+    color: $highlight-colour;
+    letter-spacing: 0.4px;
+}
+
+a.popup-close.white {
+    background-image: url('../images/close-white.svg');
+}

@@ -1,0 +1,28 @@
+ul.filter-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 30px 0;
+    text-align: center;
+    background: $main-colour;
+    li {
+        display: block;
+        padding: 8px 0;
+    }
+    @media #{$mediaquery-smalldesktop} {
+        li {
+            display: inline;
+            padding: 0;
+        }
+    }
+    li a {
+        font-family: $main-font;
+        color: $colour-white;
+        font-size:1.4rem;
+        line-height: 2rem;
+        padding: 0 5px;
+        margin: 0 5px;
+    }
+    li.active a, li a:hover {
+        color: $highlight-colour;
+    }
+}

@@ -1,0 +1,99 @@
+
+/**
+Alternating text / image layout
+ */
+
+.mobile-only.col-center .btn {
+  margin-top:20px;
+}
+
+section.alternating-text-photo {
+
+  .background-grey {
+    background: $colour-background;
+  }
+
+  .background-grey-flat {
+    background: $colour-background;
+  }
+
+  h2 {
+    margin:15px 0;
+  }
+
+  p.overline {
+    margin-top:20px;
+    margin-bottom:0;
+
+  }
+  p {
+    margin-bottom:25px;
+  }
+
+  img {
+    max-width:80%;
+    display: block;
+    margin:20px auto 0;
+
+    &.photo-background {
+      width:100%;
+      margin-left:0;
+      margin-right:0;
+      display: inline;
+      max-width:100%;
+    }
+
+    @media #{$mediaquery-smalldesktop} {
+      max-width:100%;
+      margin:0;
+    }
+  }
+
+  .photo-bg-container {
+    width:100%;
+    clear: both;
+  }
+
+  .photo-bg-inner {
+    width:50%;
+    margin-left:50%;
+    text-align: left;
+    overflow: hidden;
+
+    img {
+      max-width:inherit;
+      width:1000px;
+    }
+  }
+
+
+
+}
+
+.alternating-text-with-background {
+
+  @media #{$mediaquery-smalldesktop} {
+
+    position:relative;
+    text-align: right;
+
+    div.alternating-text {
+      position: absolute;
+      width: 100%;
+      text-align: left;
+      margin-top: 80px;
+    }
+  }
+
+
+
+}
+
+/* to deal with the overlapping text/images */
+.alternating-text-photo-item .container {
+  clear:both;
+}
+
+.alternating-text-photo-item .fixed-height {
+  max-height:600px;
+}

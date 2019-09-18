@@ -1,0 +1,23 @@
+section.popup-download {
+  @include colour-overlay('blue-to-white-trans');
+
+  position: fixed;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+
+  z-index: 99;
+}
+
+section.popup-download form {
+  margin-top:40px;
+}
+
+p.response {
+    font-family: $main-font;
+    font-size: 16px;
+    font-weight: bold;
+    color: $highlight-colour;
+    letter-spacing: 0.4px;
+}

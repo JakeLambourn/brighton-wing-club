@@ -1,0 +1,17 @@
+section.article-banner-background {
+   background: rgba(43,184,194,0.8);
+   background: -moz-linear-gradient(bottom, rgba(43,184,194,0.8) 0%, rgba(93,190,132,0.8) 100%),url(../images/forest/self-portrait.jpg) center center no-repeat;
+   background: -webkit-gradient(left bottom, left top, color-stop(0%, rgba(43,184,194,0.8)), color-stop(100%, rgba(93,190,132,0.8))),url(../images/forest/self-portrait.jpg) center center no-repeat;
+   background: -webkit-linear-gradient(bottom, rgba(43,184,194,0.8) 0%, rgba(93,190,132,0.8) 100%),url(../images/forest/self-portrait.jpg) center center no-repeat;
+   background: -o-linear-gradient(bottom, rgba(43,184,194,0.8) 0%, rgba(93,190,132,0.8) 100%),url(../images/forest/self-portrait.jpg) center center no-repeat;
+   background: -ms-linear-gradient(bottom, rgba(43,184,194,0.8) 0%, rgba(93,190,132,0.8) 100%),url(../images/forest/self-portrait.jpg) center center no-repeat;
+   background: linear-gradient(to top, rgba(43,184,194,0.8) 0%, rgba(93,190,132,0.8) 100%),url(../images/forest/self-portrait.jpg) center center no-repeat;
+   -webkit-background-size: cover;
+   background-size: cover;
+   background-attachment: scroll;
+}
+
+.large-icons {
+    font-size: 30px;
+    margin-left: 12px;
+}

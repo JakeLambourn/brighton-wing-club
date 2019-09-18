@@ -1,0 +1,97 @@
+
+/* Table of Content
+==================================================
+	#Z-INDEX
+	#Media Queries
+	*/
+
+
+/* SIMPLE FRAMEWORK
+================================================== */
+
+/* Percentage Framework */
+.columns.half {
+  width: 50%; }
+  .columns.half.omega {
+    margin-right: 0; }
+  .columns.half.alpha {
+    margin-left: 0; }
+
+.columns.half                     { width: 50%; &.omega { margin-right: 0;} &.alpha { margin-left: 0;} }
+.columns.quater                   { width: 25%; }
+.columns.third                    { width: 33.33%; }
+
+
+/* Z-INDEXES
+================================================== */
+/*.messages { z-index: 999; } /* Notifications */
+
+#logo {
+	z-index: 9;
+}
+
+
+/* #Media Queries
+================================================== */
+
+
+
+	/* PARALLAX DOESN'T WORK ON IPHONE */
+	@media only screen and (min-width: 769px) {
+		.parallax {
+			background-attachment: fixed !important;
+		}
+	}
+
+	/* Desktop */
+	@media only screen and (max-width: 1024px) {
+		#mob-menu {
+			display: block !important;
+			color: #777;
+			float: right;
+    		margin-top: -46px;
+    		font-size: 20px;
+		}
+		#menu-main-menu-launch {
+			li {
+				width: 100%;
+				display: list-item;
+				background-color: $blue;
+				margin-bottom: 0;
+				a {
+					width: 100% !important;
+					font-size: 20px;
+					padding-top: 15px;
+    				padding-bottom: 15px;
+				}
+			}
+		}
+		
+
+	}
+
+	@media only screen and (max-width: 767px) {
+		
+
+	}
+
+	/* PARALLAX DOESN'T WORK ON IPHONE */
+	@media only screen and (min-width: 767px) {
+
+
+	}
+
+
+
+	/* All Mobile Sizes (devices and browser) */
+	@media only screen and (max-width: 450px) {
+
+		
+
+	}
+
+	@media only screen and (max-width: 320px) {
+
+		
+
+	}

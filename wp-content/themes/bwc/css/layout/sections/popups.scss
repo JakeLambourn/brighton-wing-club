@@ -1,0 +1,29 @@
+// Animate close popups
+.popup {
+    opacity: 1;
+    visibility: visible;
+    transition: all .6s;
+}
+.popup.closed {
+    opacity: 0;
+    visibility: hidden;
+}
+
+a.popup-close {
+    display: block;
+    position: absolute;
+    height: 32px;
+    width: 32px;
+    
+    background-image: url('../images/close.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    top: -50px;
+    right: 2%;
+}
+
+#freebie-overlay {
+  display: none;
+}

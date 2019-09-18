@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 213 212" style="enable-background:new 0 0 213 212;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#2F4858;}
+	.st1{fill:none;stroke:#717F9F;stroke-width:1.1313;stroke-miterlimit:10;}
+	.st2{fill:#D0DAEF;}
+	.st3{font-family:'FlyboyBB';}
+	.st4{font-size:44.1776px;}
+	.st5{fill:#FFFFFF;}
+	.st6{font-size:43.3034px;}
+	.st7{font-size:14.9534px;}
+</style>
+<g>
+	<g>
+		<circle class="st0" cx="105.8" cy="105.5" r="102.5"/>
+		<circle class="st1" cx="105.8" cy="105.5" r="92.6"/>
+		<text transform="matrix(0.9853 -0.171 0.171 0.9853 19.9562 110.1862)" class="st2 st3 st4">Brighton</text>
+		<text transform="matrix(0.9853 -0.171 0.171 0.9853 30.2288 141.9364)" class="st5 st3 st6">Wing Club</text>
+		<line class="st1" x1="34.1" y1="147" x2="85.2" y2="137.3"/>
+		<line class="st1" x1="86.1" y1="104" x2="117.9" y2="97.9"/>
+		<text transform="matrix(0.9853 -0.171 0.171 0.9853 61.4922 159.2142)" class="st2 st3 st7">Wingin’ it since 2019!</text>
+	</g>
+	<line class="st1" x1="124.1" y1="131.1" x2="188.6" y2="118.9"/>
+</g>
+</svg>

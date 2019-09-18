@@ -1,0 +1,74 @@
+section.choose-templates {
+  @include colour-overlay('blue-to-white-vertical');
+}
+
+.carousel {
+  overflow-x: scroll;
+  white-space: nowrap;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-overflow-scrolling: touch;
+  margin-top:10px;
+
+  /* hide scrollbar on firefox */
+  overflow: -moz-scrollbars-none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  //NOTE: Don't add this in. Stops carousel working on iPad landscape
+  @media #{$mediaquery-smalldesktop} {
+    //overflow-x: hidden;
+  }
+
+
+
+
+
+    a {
+      display: inline-block;
+      margin:0 10px;
+      position: relative;
+      white-space:normal;
+
+      img {
+        width:190px;
+        @include bm-transition(all);
+      }
+
+      &:hover img {
+        /* TODO: make this a mixin */
+        -webkit-filter: blur(3px);
+        -ms-filter: blur(3px);
+        filter: blur(3px);
+      }
+
+      p {
+        padding:10px 12px;
+        font-size:11px;
+        line-height: 13px;
+        text-align: center;
+
+        strong {
+          font-size:13px;
+        }
+      }
+    }
+
+  &.carousel-whitebox a {
+    background: #fff;
+    box-shadow:2px 8px 15px 0 rgba(31,32,68,0.25);
+  }
+
+}
+
+.play{
+  animation: anim 4s infinite linear;
+}
+.pause{
+  animation-play-state: paused;
+}
+@keyframes anim {
+  0%   {transform: translateX(0);}
+  100% {transform: translateX(-600px);}
+}

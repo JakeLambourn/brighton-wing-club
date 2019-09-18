@@ -1,0 +1,332 @@
+/**
+Top Banner
+ */
+
+section.banner {
+
+  background-color: transparent;
+
+  .container {
+    z-index:$z-index-content;
+  }
+
+
+  .btn {
+    margin-bottom: 0;
+
+    @media #{$mediaquery-smalldesktop} {
+      margin-bottom: 0;
+    }
+  }
+
+  p {
+    font-size:2rem;
+    line-height:2.6rem;
+    font-weight: bold;
+
+    @media #{$mediaquery-smalldesktop} {
+      font-size:2.4rem;
+      line-height:2.4rem;
+    }
+  }
+
+  h1 {
+
+    display:inline-block;
+    position:relative;
+
+    &:before {
+      position: absolute;
+      top: -4px;
+      left: 4px;
+      width: 30px;
+      content: '';
+      border-top: 4px solid $main-colour;
+      @include bm-transition(width);
+
+      @media #{$mediaquery-smalldesktop} {
+        left:6px;
+        border-top: 6px solid $main-colour;
+        top:0;
+      }
+
+    }
+  }
+
+  //Activate the hover over the h1 when we hover over the whole banner
+  &:hover {
+    h1:before {
+      width:60px;
+
+      @media #{$mediaquery-smalldesktop} {
+        width:45px;
+      }
+    }
+  }
+
+  h1 {
+    padding-bottom: ($banner-text-padding - 25px); //Need this to offset the line-height
+    line-height:1;
+  }
+
+  h2 {
+    padding-bottom:($banner-text-padding - 15px);
+    line-height:1;
+    font-size: 4rem;
+  }
+  p {
+    padding-bottom:$banner-text-padding;
+    line-height:2.6rem;
+
+    @media #{$mediaquery-smalldesktop} {
+      line-height:1;
+    }
+  }
+
+
+
+  h2 span.cycle-slideshow {
+    display: block;
+
+    @media #{$mediaquery-smalldesktop} {
+      display: inline-block;
+    }
+
+    span.hidden {
+      display: none;
+    }
+  }
+
+  img {
+    display:block;
+  }
+
+  //The background to the right that gets faded in on load
+  img.banner-background {
+    position:absolute;
+    bottom:0;
+    right:0;
+    z-index:$z-index-background;
+    display:none;
+  }
+}
+
+
+/**
+Text Banners
+ */
+
+.text-banner {
+  @include colour-overlay('blue-to-white-vertical');
+
+  .container {
+    padding: $standard-padding-mobile 0;
+
+    @media #{$mediaquery-smalldesktop} {
+
+      height: 365px;
+
+      padding: 0;
+    }
+  }
+
+  h1 {
+    margin-bottom:20px;
+  }
+}
+
+/**
+Full height banner
+ */
+
+.banner-full-height {
+
+  /* note - no point in doing a mixin here as this will need to be generated dynamically on the page */
+
+  /*
+  background: rgba(43,184,194,0.8);
+  background: -moz-linear-gradient(bottom, rgba(43,184,194,0.8) 0%, rgba(93,190,132,0.8) 100%), url(../images/about/banner.jpg) center center no-repeat;
+  background: -webkit-gradient(left bottom, left top, color-stop(0%, rgba(43,184,194,0.8)), color-stop(100%, rgba(93,190,132,0.8))), url(../images/about/banner.jpg) center center no-repeat;
+  background: -webkit-linear-gradient(bottom, rgba(43,184,194,0.8) 0%, rgba(93,190,132,0.8) 100%), url(../images/about/banner.jpg) center center no-repeat;
+  background: -o-linear-gradient(bottom, rgba(43,184,194,0.8) 0%, rgba(93,190,132,0.8) 100%), url(../images/about/banner.jpg) center center no-repeat;
+  background: -ms-linear-gradient(bottom, rgba(43,184,194,0.8) 0%, rgba(93,190,132,0.8) 100%), url(../images/about/banner.jpg) center center no-repeat;
+  background: linear-gradient(to top, rgba(43,184,194,0.8) 0%, rgba(93,190,132,0.8) 100%), url(../images/about/banner.jpg) center center no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+
+  @media #{$mediaquery-smalldesktop} {
+    background-attachment: fixed!important;
+  }
+  */
+
+  @media #{$mediaquery-smalldesktop} {
+    height: calc(100vh - 72px);
+  }
+
+  @media #{$mediaquery-reducedheight} {
+    height:inherit;
+  }
+
+
+  .container {
+
+    @media #{$mediaquery-smalldesktop} {
+      height:100vh;
+    }
+
+    @media #{$mediaquery-reducedheight} {
+      height:inherit;
+    }
+
+
+
+    .row {
+      padding-top:$standard-padding-mobile;
+
+      @media #{$mediaquery-smalldesktop} {
+        padding-top:$standard-padding-desktop;
+      }
+    }
+  }
+
+  h1 {
+    margin-bottom:20px;
+  }
+}
+
+/**
+Bird banner
+ */
+
+
+section.text-banner-bird {
+
+  .container {
+    padding:45px 0;
+
+    @media #{$mediaquery-smalldesktop} {
+      padding : 0;
+    }
+  }
+
+
+  h1 {
+
+    font-size: 6rem;
+    line-height: 1;
+
+    @media #{$mediaquery-smalldesktop} {
+      font-size: 11.5rem;
+    }
+
+    span {
+      font-size: 4rem;
+
+      @media #{$mediaquery-smalldesktop} {
+        font-size: 9rem;
+        line-height:7.5rem;
+      }
+      display: block;
+    }
+  }
+
+  h2 {
+    font-size:2rem;
+
+    @media #{$mediaquery-smalldesktop} {
+      font-size:2.4rem;
+    }
+  }
+
+  p {
+    font-size:1.0rem;
+    font-weight: normal;
+    line-height:1.5;
+    display:none;
+
+    @media #{$mediaquery-tablet} {
+      font-size: 1.2rem;
+      display:block;
+    }
+
+    span.larger {
+      font-size:1.5rem;
+    }
+  }
+
+  .bird-top-image {
+
+    bottom: -20%;
+    position: absolute;
+    right: -30%;
+    width: 70%;
+
+    @media #{$mediaquery-tablet} {
+      bottom:inherit;
+      right:0;
+      width:400px;
+      position: absolute;
+      right: 0;
+      top: 50px;
+      width: 50%;
+
+    }
+
+    @media #{$mediaquery-largedesktop} {
+      right: 50px;
+      width: 500px;
+    }
+  }
+}
+
+
+.banner-home {
+  padding-top: 170px;
+  background: none;
+  height:calc(100vh - 72px);
+
+
+  @media #{$mediaquery-tablet} {
+    min-height:600px; //To match bird/hive pages
+    height:auto;
+  }
+
+  @media #{$mediaquery-smalldesktop} {
+    min-height:694px; //To match bird/hive pages
+  }
+
+  h1 {
+    line-height:0.8;
+    color: #fff;
+  }
+
+  p {
+    color: #fff;
+    font-size: 2.4rem !important;
+    font-weight: bold !important; }
+
+  h2 {
+    margin-top:40px;
+    font-size:2rem;
+
+    @media #{$mediaquery-largedesktop} {
+      font-size:2.4rem;
+      color: #fff;
+      /*max-width:300px;*/
+    }
+  }
+
+  .btn {
+    background-color: #bb2c78;
+  }
+
+  p.overline {
+    margin-left:5px;
+    margin-bottom:25px;
+  }
+}
+
+.banner-hive h2 {
+  margin-top:0;
+  padding-top:0;
+}

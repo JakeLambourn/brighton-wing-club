@@ -1,0 +1,212 @@
+select,
+input[type="tel"],
+input[type="text"],
+input[type="email"],
+input[type="date"] {
+  width:100%;
+  color: $colour-white;
+  font-family:$header-font;
+  font-size:1.6rem;
+  padding:15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border:1px solid transparent;
+  background:rgba(255,255,255,0.15);
+  margin-top:15px;
+
+  @include x-appearance(none);
+  @include bm-transition(all);
+
+  &:focus {
+    background:rgba(255,255,255,1);
+    color: $main-colour;
+  }
+
+  @media #{$mediaquery-smalldesktop} {
+    margin-top: 0;
+  }
+
+  &.wpcf7-not-valid {
+    border-color: $colour-error;
+  }
+}
+
+span.enquirynature {
+  margin-top: 15px;
+  display: block;
+
+  @media #{$mediaquery-smalldesktop} {
+    margin-top: 0;
+  }
+}
+
+input[type="submit"] {
+  @include x-appearance(none);
+  border-radius: 0;
+
+  margin-top:15px;
+
+  @media #{$mediaquery-smalldesktop} {
+    margin-top: 0;
+  }
+}
+
+
+div.white-fields form,
+form.white-fields {
+  input[type="tel"],
+  input[type="text"],
+  input[type="email"] {
+    background: $colour-white;
+    color: $main-colour;
+  }
+}
+
+/* contact form 7 */
+span.wpcf7-not-valid-tip {
+  color: $colour-error;
+  margin-top:5px;
+}
+
+div.wpcf7-validation-errors {
+  padding:0;
+  background: none;
+  color: $main-colour;
+  border:none;
+  font-size: 2rem;
+  font-family: $header-font;
+  text-align: center;
+  margin:30px auto 0;
+  color: $colour-error;
+  max-width:734px; /* the width of two fields + padding inbetween */
+}
+
+
+
+div.wpcf7-mail-sent-ok {
+  @extend div.wpcf7-validation-errors;
+
+  color: $main-colour;
+}
+
+span.wpcf7-not-valid-tip,
+div.wpcf7-validation-errors,
+div.wpcf7-mail-sent-ok {
+  color: $highlight-colour;
+}
+
+/* Custom CF7 Loader */
+div.wpcf7 .ajax-loader {
+  background-image: url('../images/loading.gif');
+  background-size: 52px 52px;
+  width: 52px;
+  height: 52px;
+  margin-left: 10px;
+  position: absolute;
+}
+
+
+/* select2 plugin */
+.select2-container {
+  width:100%!important;
+  position: relative;
+}
+
+.select2-container--default .select2-selection--multiple {
+  font-size:1.6rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: none;
+}
+
+.select2-container .select2-search--inline .select2-search__field {
+  width: inherit!important;
+  padding-left:15px;
+  line-height:42px;
+  font-size:1.6rem;
+}
+
+
+.select2-container:after {
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 24px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid $main-colour;
+  pointer-events: none;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+  font-size:1.4rem;
+}
+
+/* Input placeholders, cross browser styling */
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color:    $colour-white;
+  opacity:  0.7;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:    $colour-white;
+  opacity:  0.7;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:    $colour-white;
+  opacity:  0.7;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color:    $colour-white;
+  opacity:  0.7;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+  color:    $colour-white;
+  opacity:  0.7;
+}
+
+
+div.white-fields ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color:    $main-colour;
+  opacity:  0.7;
+}
+div.white-fields :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:    $main-colour;
+  opacity:  0.7;
+}
+div.white-fields ::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:    $main-colour;
+  opacity:  0.7;
+}
+div.white-fields :-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color:    $main-colour;
+  opacity:  0.7;
+}
+div.white-fields ::-ms-input-placeholder { /* Microsoft Edge */
+  color:    $main-colour;
+  opacity:  0.7;
+}
+
+
+:focus::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color:    $main-colour;
+  opacity:  0.7;
+}
+:focus:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:    $main-colour;
+  opacity:  0.7;
+}
+:focus::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:    $main-colour;
+  opacity:  0.7;
+}
+:focus:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color:    $main-colour;
+  opacity:  0.7;
+}
+:focus::-ms-input-placeholder { /* Microsoft Edge */
+  color:    $main-colour;
+  opacity:  0.7;
+}

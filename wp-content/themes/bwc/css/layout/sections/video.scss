@@ -1,0 +1,67 @@
+// Required to adjust columns which are previously off center
+@media only screen and (min-width: $breakpoint-medium) {
+    .adjusted-offset-2 .offset-2 {
+        margin-left: 148px !important;     
+    }
+}
+@media only screen and (min-width: $breakpoint-large) {
+    .adjusted-offset-2 .offset-2 {
+        margin-left: 172px !important;     
+    }
+}
+
+.video-container-16-9 {
+    position: relative;
+    height: 0;
+    width: 100%;
+    padding-bottom: 56.25%;
+}
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 2;
+    opacity: 1;
+    visibility: visible;
+    transition: all 1s .5s; /* Delay slightly to allow video to load */
+}
+.video-overlay.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+.video-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+.video-info {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+//Play Icon
+a.play-icon {
+    display: block;
+    position: relative;
+    height: 103px;
+    width: 103px;
+    margin: 20px auto;
+    background: url(../images/play-icon.png) no-repeat center center;
+    @media only screen and (max-width: $breakpoint-medium) {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        margin: 0;
+    }
+}

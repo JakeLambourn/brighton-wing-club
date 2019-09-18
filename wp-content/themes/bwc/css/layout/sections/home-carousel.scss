@@ -1,0 +1,121 @@
+section.home-carousel {
+
+  background: none;
+  
+  .home-slideshow {
+    background: $main-colour;
+
+    .cycle-slideshow {
+
+      margin:0 auto;
+
+      @media #{$mediaquery-smalldesktop} {
+        width:520px;
+      }
+
+      .cycle-item {
+        padding:0 20px;
+
+        h2 {
+          font-size:3.5rem;
+
+          @media #{$mediaquery-smalldesktop} {
+            font-size:6rem;
+          }
+        }
+      }
+
+
+    }
+  }
+
+
+  .cycle-slideshow {
+    min-height:260px!important;
+
+    @media #{$mediaquery-smalldesktop} {
+      min-height: inherit!important;
+    }
+  }
+
+  /* cycle pager */
+  .cycle-pager {
+
+    position:absolute;
+    text-align: center;
+    width:100%;
+    bottom:0;
+
+    @media #{$mediaquery-smalldesktop} {
+      bottom:-60px;
+    }
+
+    span {
+      color: #fff;
+      cursor: pointer;
+      display: inline-block;
+      font-family: arial;
+      font-size: 50px;
+      height: 16px;
+      width: 16px;
+      opacity: 0.5;
+
+      &.cycle-pager-active {
+        opacity: 1;
+      }
+    }
+
+  }
+
+  .cycle-next,
+  .cycle-prev {
+    left: -90px;
+    margin-top: -15px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 50px;
+    opacity:0.5;
+    @include bm-transition(opacity);
+
+    &:hover {
+      opacity:1;
+    }
+  }
+
+  .cycle-next {
+    left:inherit;
+    right:-90px;
+  }
+}
+
+section.home-carousel-gradient-change {
+
+  background: $colour-white;
+
+  .gradient-background {
+    @include gradient-solid(#34b3c5, #76b82a);
+
+    width:100%;
+    height:100%;
+    position: absolute;
+    left:0;
+    top:0;
+    z-index: $z-index-background;
+
+    transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+
+    &.hidden {
+      opacity:0;
+    }
+
+    &.gradient-background-2 {
+      @include gradient-solid(#202e38, #bb2c78);
+
+    }
+
+    &.gradient-background-3 {
+      @include gradient-solid(#bb2c78, #34b3c5);
+    }
+  }
+}

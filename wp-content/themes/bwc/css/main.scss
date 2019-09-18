@@ -1,0 +1,38 @@
+//Global styles
+@import "layout/variables";
+@import "layout/mixins";
+@import "layout/reset";
+@import "layout/grid";
+@import "layout/typography";
+@import "layout/elements";
+@import "layout/forms";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/burger";
+
+//Individual pages
+@import "layout/sections/banner";
+@import "layout/sections/carousel";
+@import "layout/sections/alternating-text-images";
+@import "layout/sections/squares";
+@import "layout/sections/smallsquares";
+@import "layout/sections/grid-icons";
+@import "layout/sections/demo";
+@import "layout/sections/general-text";
+@import "layout/sections/overlay";
+@import "layout/sections/team";
+@import "layout/sections/contact";
+@import "layout/sections/pricing";
+@import "layout/sections/home-carousel";
+@import "layout/sections/video-bg";
+
+// Forest /CC
+@import "layout/sections/filter-menu";
+@import "layout/sections/video";
+@import "layout/sections/article-grid";
+@import "layout/sections/popups";
+@import "layout/sections/popup-download";
+@import "layout/sections/popup-signup";
+@import "layout/sections/main-article";
+@import "layout/sections/article-banner";
+@import "layout/sections/social-share";
