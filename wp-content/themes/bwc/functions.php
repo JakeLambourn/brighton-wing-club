@@ -128,8 +128,10 @@ function twentysixteen_scripts_styles() {
 	//wp_enqueue_script( 'jqueryCycle', 'http://malsup.github.io/jquery.cycle2.js', array( 'jquery' ), '2016-11-10', true );
 
 	wp_enqueue_script( 'theme_functions', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '2016-11-10', true );
+	
 
 	wp_enqueue_script( 'google_map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAshSxoJvt4w0W3gk0UzsT1EIcTs9g6-Jw&callback=initMap', array('jquery'), '2019-11-10', true );
+
 		
 	// Loads our main stylesheet.
 	wp_enqueue_style( 'wc-main-style', get_template_directory_uri() . '/styles/css/mains.css', array(), '2013-07-18' );  
@@ -909,7 +911,7 @@ function my_acf_save_post( $post_id ) {
 
 	if( $_POST['post_type'] == 'venue' ) {
 
-		$url = 'https://maps.googleapis.com/maps/api/place/details/json?key=AIzaSyAshSxoJvt4w0W3gk0UzsT1EIcTs9g6-Jw&place_id='.$_POST['acf']['field_5d80a31a65fa3'].'&fields=opening_hours/weekday_text,rating,user_ratings_total,website,formatted_address';
+		$url = 'https://maps.googleapis.com/maps/api/place/details/json?key=AIzaSyAshSxoJvt4w0W3gk0UzsT1EIcTs9g6-Jw&place_id='.$_POST['acf']['field_5d80a31a65fa3'].'&fields=opening_hours/weekday_text,rating,user_ratings_total,website,formatted_address,geometry';
 	        
 	    $ch = curl_init();
 
@@ -925,33 +927,58 @@ function my_acf_save_post( $post_id ) {
 		$r = json_decode($result);
 
 		// Address
-		update_field( 'field_5d80ad49d4d46', $r->result->formatted_address, $post_id );
+		update_field( 'field_5d80ad49d4d46', array("address"=>$r->result->formatted_address,"lat"=>$r->result->geometry->location->lat,"lng"=>$r->result->geometry->location->lng), $post_id );
 
 		// Google Rating
 		update_field( 'field_5d80b80f68699', $r->result->rating, $post_id );
 
 		// Opening Hours
+
 		$times = "";
 		foreach( $r->result->opening_hours->weekday_text as $time ) {
 			$times .= $time.'<br />';
 		}
 		update_field( 'field_5d80b8b16869a', $times, $post_id );
 
+
 		// Website
 		update_field( 'field_5d80b8c36869b', $r->result->website, $post_id );
+		
+		// Geo - Lat
+		//update_field( 'field_5d80e717a979b', $r->result->geometry->location->lat, $post_id );
+		
+		// Geo - Lng
+		//update_field( 'field_5d80e71ca979c', $r->result->geometry->location->lng, $post_id );
 
-		var_dump($r);
+		//var_dump($_POST);
 		//echo $r->result->rating;
-		exit();
+		//exit();
 
 	}
 
 }
 
-add_action('acf/save_post', 'my_acf_save_post', 15);
+add_action('acf/save_post', 'my_acf_save_post', 14);
 
 
+add_filter( 'comments_open', 'my_comments_open', 10, 2 );
 
+function my_comments_open( $open, $post_id ) {
+
+  $post = get_post( $post_id );
+
+  if ( 'venue' == $post->post_type )
+      $open = true;
+
+  return $open;
+}
+
+
+function crunchify_disable_comment_url($fields) { 
+    unset($fields['url']);
+    return $fields;
+}
+add_filter('comment_form_default_fields','crunchify_disable_comment_url');
 
 
 
